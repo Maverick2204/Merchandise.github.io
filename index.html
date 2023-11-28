@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Merchandise Signings Registration</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+</head>
+<body>
+    <div class="heading"><h1>DVM MERCHANDISE SIGNINGS</h1></div>
+
+    <form id="registrationForm" onsubmit="submitForm(event)">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" minlength="5" maxlength="50" required>
+        <div class="error-message" id="nameError"></div>
+
+         <label for="email">Email ID:</label>
+        <input type="email" id="email" name="email" required>
+        <div class="error-message" id="emailError"></div>
+
+        <label for="phone">Phone Number:</label>
+        <input type="tel" id="phone" name="phone" pattern="[0-9]{10}" maxlength="10" minlength="10" required>
+        <div class="error-message" id="phoneError"></div>
+
+        <label for="bitsId">BITS ID:</label>
+        <input type="text" id="bitsId" name="bitsId" pattern="^\d{4}[A-Z]\d{1}[A-Z]{2}\d{4}[A-Z]$"  title="BITS ID should be of the type 2023A8PS0398P" required>
+        <div class="error-message" id="bitsIdError"></div>
+
+        <label for="hostel">Hostel:</label>
+        <select id="hostel" name="hostel" required>
+            <option value="" disabled selected>Select your hostel</option>
+            <option value="GANDHI">GANDHI</option>
+            <option value="KRISHNA">KRISHNA</option>
+            <option value="VISHWAKARMA">VISHWAKARMA</option>
+            <option value="VYAS">VYAS</option>
+            <option value="SHANKAR">SHANKAR</option>
+            <option value="MEERA">MEERA</option>
+            <option value="BUDH">BUDH</option>
+            <option value="MALVIYA">MALVIYA</option>
+            <option value="R">RAM</option>
+        </select>
+        <div class="error-message" id="hostelError"></div>
+
+        <label>Size:</label>
+        <label><input type="radio" name="size" value="small" required> Small</label>
+        <label><input type="radio" name="size" value="medium" required> Medium</label>
+        <label><input type="radio" name="size" value="large" required> Large</label>
+        <label><input type="radio" name="size" value="X-large" required> X-Large</label>
+        <label><input type="radio" name="size" value="XX-large" required> XX-Large</label>
+        <div class="error-message" id="sizeError"></div>
+
+        <label><input type="checkbox" id="terms" name="terms" required> I agree to the terms and conditions</label>
+        <div class="error-message" id="termsError"></div>
+
+        <button type="submit">Submit</button>
+        <button type="reset">Reset</button>
+    </form>
+</body>
+</html>
